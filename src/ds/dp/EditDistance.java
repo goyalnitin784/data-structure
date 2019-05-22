@@ -29,7 +29,7 @@ public class EditDistance {
         if (a[m-1] == b[n-1])
             return calculateDisctance(a, b, m-1, n-1);
 
-        return min(calculateDisctance(a,b,m-1,n-1),calculateDisctance(a,b,m-1,n),calculateDisctance(a,b,m,n-1));
+        return 1+min(calculateDisctance(a,b,m-1,n-1),calculateDisctance(a,b,m-1,n),calculateDisctance(a,b,m,n-1));
     }
 
     int calculateDisctanceWithDP(char[] a,char[] b,int m,int n){

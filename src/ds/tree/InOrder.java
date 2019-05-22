@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class InOrder {
 
-    public void traverseWithRecursion(Node root){
-        if(root==null){
+    public void traverseWithRecursion(Node root) {
+        if (root == null) {
             return;
         }
         traverseWithRecursion(root.getLeft());
@@ -18,19 +18,23 @@ public class InOrder {
         while (true) {
             while (node != null) {
                 nodes.push(node);
-                node = node.getLeft();
+                node = node.left;
             }
             node = nodes.pop();
             System.out.println(node.data);
+
             if (nodes.isEmpty()) {
                 break;
             }
-            node = node.getRight();
+            if (node.right != null) {
+                node = node.right;
+            }
         }
+
     }
 
     public static void main(String[] args) {
-        Node root =  TreeUtil.createTree();
+        Node root = TreeUtil.createTree();
         new InOrder().traverseWithRecursion(root);
         new InOrder().traverseWithoutRecursion(root);
     }

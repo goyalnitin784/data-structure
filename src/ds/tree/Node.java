@@ -5,6 +5,7 @@ public class Node implements Comparable,Cloneable{
     Integer data;
     Node left;
     Node right;
+    Node nextRight;
 
     public Node(){
 
@@ -35,6 +36,14 @@ public class Node implements Comparable,Cloneable{
 
     public void setRight(Node right) {
         this.right = right;
+    }
+
+    public Node getNextRight() {
+        return nextRight;
+    }
+
+    public void setNextRight(Node nextRight) {
+        this.nextRight = nextRight;
     }
 
     @Override
