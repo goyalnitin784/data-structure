@@ -5,43 +5,43 @@ import java.util.List;
 
 public class LowestCommonAnsestor {
 
-    public static boolean getPath(Node node, int value, List<Node> path) {
-        if (node == null) {
+    public static boolean getPath(TreeNode treeNode, int value, List<TreeNode> path) {
+        if (treeNode == null) {
             return false;
         }
 
-        if (node.data == value) {
-            path.add(node);
+        if (treeNode.data == value) {
+            path.add(treeNode);
             return true;
         }
 
-        if (node.left != null && getPath(node.left, value, path)) {
-            path.add(node);
+        if (treeNode.left != null && getPath(treeNode.left, value, path)) {
+            path.add(treeNode);
             return true;
         }
 
-        if (node.right != null && getPath(node.right, value, path)) {
-            path.add(node);
+        if (treeNode.right != null && getPath(treeNode.right, value, path)) {
+            path.add(treeNode);
             return true;
         }
         return false;
     }
 
     public static void main(String[] args) {
-        Node node1 = TreeUtil.createTree();
-        Node node2 = TreeUtil.createTree();
-        List<Node> node1List = new ArrayList<>();
-        List<Node> node2List = new ArrayList<>();
-        boolean path1Bool = getPath(node1, 3, node1List);
-        boolean path2Bool = getPath(node2, 3, node2List);
+        TreeNode treeNode1 = TreeUtil.createTree();
+        TreeNode treeNode2 = TreeUtil.createTree();
+        List<TreeNode> treeNode1List = new ArrayList<>();
+        List<TreeNode> treeNode2List = new ArrayList<>();
+        boolean path1Bool = getPath(treeNode1, 3, treeNode1List);
+        boolean path2Bool = getPath(treeNode2, 3, treeNode2List);
 
-        int i = node1List.size()-1;
-        int j = node2List.size()-1;
+        int i = treeNode1List.size()-1;
+        int j = treeNode2List.size()-1;
 
         if (path1Bool && path2Bool) {
             while (i >= 0 && j >= 0) {
-                if (node1List.get(i).getData() == node2List.get(j).getData()) {
-                    System.out.println(node1List.get(i).data);
+                if (treeNode1List.get(i).getData() == treeNode2List.get(j).getData()) {
+                    System.out.println(treeNode1List.get(i).data);
                 }
                 i--;
                 j--;

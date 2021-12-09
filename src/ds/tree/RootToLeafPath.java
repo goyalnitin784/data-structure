@@ -5,22 +5,22 @@ import java.util.List;
 
 public class RootToLeafPath {
 
-    public void generate(Node node, List<Node> path) {
-        if (node != null) {
-            List<Node> nodes = null;
-            if (node.left != null) {
-                nodes = new ArrayList<>(path);
-                nodes.add(node.left);
-                generate(node.left, nodes);
+    public void generate(TreeNode treeNode, List<TreeNode> path) {
+        if (treeNode != null) {
+            List<TreeNode> treeNodes = null;
+            if (treeNode.left != null) {
+                treeNodes = new ArrayList<>(path);
+                treeNodes.add(treeNode.left);
+                generate(treeNode.left, treeNodes);
             }
 
-            if (node.right != null) {
-                nodes = new ArrayList<>(path);
-                nodes.add(node.right);
-                generate(node.right, nodes);
+            if (treeNode.right != null) {
+                treeNodes = new ArrayList<>(path);
+                treeNodes.add(treeNode.right);
+                generate(treeNode.right, treeNodes);
             }
         }
-        if (node.left == null && node.right == null) {
+        if (treeNode.left == null && treeNode.right == null) {
             for (Object way : path) {
                 System.out.print(way);
             }
@@ -30,9 +30,9 @@ public class RootToLeafPath {
     }
 
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
-        List<Node> path = new ArrayList<>();
-        path.add(node);
-        new RootToLeafPath().generate(node, path);
+        TreeNode treeNode = TreeUtil.createTree();
+        List<TreeNode> path = new ArrayList<>();
+        path.add(treeNode);
+        new RootToLeafPath().generate(treeNode, path);
     }
 }

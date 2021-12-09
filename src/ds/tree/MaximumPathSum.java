@@ -4,17 +4,17 @@ public class MaximumPathSum {
 
     int maxSum = 0;
 
-    public static int getMaxSum(Node node) {
+    public static int getMaxSum(TreeNode treeNode) {
 
-        if (node == null) {
+        if (treeNode == null) {
             return 0;
         }
 
         int maxLeft = -1;
         int maxRight = -1;
 
-        maxLeft = node.data + getMaxSum(node.left);
-        maxRight = node.data + getMaxSum(node.right);
+        maxLeft = treeNode.data + getMaxSum(treeNode.left);
+        maxRight = treeNode.data + getMaxSum(treeNode.right);
 
         if (maxLeft > maxRight) {
             return maxLeft;
@@ -24,7 +24,7 @@ public class MaximumPathSum {
     }
 
     public static void main(String[] args) {
-        Node root = TreeUtil.createTree();
+        TreeNode root = TreeUtil.createTree();
         System.out.println(getMaxSum(root));
     }
 }

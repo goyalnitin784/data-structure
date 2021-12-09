@@ -1,59 +1,53 @@
 package ds.array;
 
-import java.util.Scanner;
+import java.time.LocalTime;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Subarraysum {
-    /*
-    * Print Starting and end index of the sub array
-    * */
-    static void subArraySum(int arr[], int n, int sum) {
-        int curr_sum = arr[0], start = 0, end = 0;
-        while (true) {
 
-            if (curr_sum == sum) {
-                System.out.println(start + " " + end);
-                break;
-            }
-            if (end == n || start == n) {
-                System.out.println("-1");
-                break;
-            }
-            if (curr_sum + arr[end] < sum) {
-                curr_sum = curr_sum + arr[end];
-            } else {
-                while (start < end) {
-                    if (curr_sum - arr[start] > sum) {
-                        start++;
-                        curr_sum = curr_sum - arr[start];
-                    }
-                }
-            }
-            end++;
-        }
+  public static void main(String[] args) {
 
-    }
+    int sum1 = 468;
+    int arr1[] = new int[]{
+        135, 101, 170, 125, 79, 159, 163, 65, 106, 146, 82, 28, 162, 92, 196, 143, 28, 37, 192, 5,
+        103, 154, 93, 183, 22, 117, 119, 96, 48, 127, 172, 139, 70, 113, 68, 100, 36, 95, 104, 12,
+        123, 134
+    };
+    new Subarraysum().test(sum1, arr1);
+  }
 
-    public static void main(String[] args) {
-        Subarraysum arraysum = new Subarraysum();
-        int arr[] = {15, 2, 4, 8, 9, 5, 10, 23};
-        int n = arr.length;
-        int sum = 23;
-        arraysum.subArraySum(arr, n, sum);
+  public void test(int sum, int arr[]) {
 
-        Scanner scanner = new Scanner(System.in);
-        int testCases = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < testCases; i++) {
-            n = Integer.parseInt(scanner.nextLine());
-            arr = new int[n];
-            sum = Integer.parseInt(scanner.nextLine());
-            String arryString = scanner.nextLine();
-            String[] data = arryString.split(" ");
-            int index = 0;
-            for (String val : data) {
-                arr[index] = Integer.parseInt(val);
-                index++;
-            }
-            arraysum.subArraySum(arr, n, sum);
-        }
-    }
+    new ConcurrentHashMap(1,1,1);
+//    int start = 0;
+//    int end = 0;
+//    boolean solution = false;
+//    while (true) {
+//      if (sumTillNow == sum) {
+//        solution = true;
+//        break;
+//      }
+//      if (start >= arr.length || end >= arr.length) {
+//        break;
+//      }
+//
+//      while (sumTillNow < sum && end < arr.length) {
+//        sumTillNow += arr[end];
+//        end++;
+//      }
+//      while (sumTillNow > sum && start <= end) {
+//        sumTillNow -= arr[start];
+//        start++;
+//      }
+//    }
+//    if (solution) {
+//      System.out.println((start + 1) + " " + end);
+//    } else {
+//      System.out.print(-1);
+//    }
+
+
+
+  }
+
 }

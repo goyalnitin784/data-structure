@@ -3,21 +3,21 @@ package ds.tree;
 public class HeightOfATree {
 
 
-    public static int height(Node node) {
-        if (node == null) {
+    public static int height(TreeNode treeNode) {
+        if (treeNode == null) {
             return 0;
         }
-        if (node.left == null && node.right == null) {
+        if (treeNode.left == null && treeNode.right == null) {
             return 1;
         }
         int heightLeft = -1;
         int heightRight = -1;
-        if (node.left != null) {
-            heightLeft = 1 + height(node.left);
+        if (treeNode.left != null) {
+            heightLeft = 1 + height(treeNode.left);
         }
 
-        if (node.right != null) {
-            heightRight = 1 + height(node.right);
+        if (treeNode.right != null) {
+            heightRight = 1 + height(treeNode.right);
         }
 
         if (heightLeft > heightRight) {
@@ -28,8 +28,8 @@ public class HeightOfATree {
     }
 
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
-        int height = height(node);
+        TreeNode treeNode = TreeUtil.createTree();
+        int height = height(treeNode);
 
     }
 }

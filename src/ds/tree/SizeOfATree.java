@@ -4,38 +4,38 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class SizeOfATree {
-    public int size(Node node){
-        if(node==null){
+    public int size(TreeNode treeNode){
+        if(treeNode ==null){
             return 0;
         }
 
-        return 1+size(node.left)+size(node.right);
+        return 1+size(treeNode.left)+size(treeNode.right);
 
     }
-    public int sizeWithoutRecursion(Node node){
-        if(node==null){
+    public int sizeWithoutRecursion(TreeNode treeNode){
+        if(treeNode ==null){
             return 0;
         }
         int size = 0;
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(node);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(treeNode);
         while (!queue.isEmpty()){
-            node = queue.poll();
+            treeNode = queue.poll();
             size++;
-            if(node.left!=null){
-                queue.add(node.left);
+            if(treeNode.left!=null){
+                queue.add(treeNode.left);
             }
-            if(node.right!=null){
-                queue.add(node.right);
+            if(treeNode.right!=null){
+                queue.add(treeNode.right);
             }
         }
         return size;
     }
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
+        TreeNode treeNode = TreeUtil.createTree();
         int element = 6;
-        System.out.println(new SizeOfATree().size(node));
-        System.out.println(new SizeOfATree().sizeWithoutRecursion(node));
+        System.out.println(new SizeOfATree().size(treeNode));
+        System.out.println(new SizeOfATree().sizeWithoutRecursion(treeNode));
 
     }
 }

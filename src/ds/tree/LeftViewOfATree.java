@@ -1,7 +1,6 @@
 package ds.tree;
 
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 public class LeftViewOfATree {
@@ -9,12 +8,12 @@ public class LeftViewOfATree {
     static int maxLevel = 0;
 
     public static void main(String[] args) {
-        Node node1 = TreeUtil.createTree();
-        LeftViewOfATree.printLeftViewUsingQueue(node1);
-        LeftViewOfATree.printLeftViewUsingRecursion(node1,1);
+        TreeNode treeNode1 = TreeUtil.createTree();
+        LeftViewOfATree.printLeftViewUsingQueue(treeNode1);
+        LeftViewOfATree.printLeftViewUsingRecursion(treeNode1,1);
     }
 
-    public static void printLeftViewUsingRecursion(Node root, int level) {
+    public static void printLeftViewUsingRecursion(TreeNode root, int level) {
         if (root == null) {
             return;
         }
@@ -26,27 +25,27 @@ public class LeftViewOfATree {
         printLeftViewUsingRecursion(root.right, level + 1);
     }
 
-    public static void printLeftViewUsingQueue(Node root) {
-        Queue<Node> queue = new LinkedList<>();
+    public static void printLeftViewUsingQueue(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         queue.add(null);
         int level = 0;
 
         System.out.println(root.data);
         while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            if (node == null) {
+            TreeNode treeNode = queue.poll();
+            if (treeNode == null) {
                 if (queue.size() != 0) {
                     System.out.println(queue.peek());
                     queue.add(null);
                     level++;
                 }
             } else {
-                if (node.left != null) {
-                    queue.add(node.left);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
                 }
-                if (node.right != null) {
-                    queue.add(node.right);
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
                 }
             }
         }

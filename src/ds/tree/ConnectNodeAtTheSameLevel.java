@@ -6,32 +6,32 @@ import java.util.Queue;
 public class ConnectNodeAtTheSameLevel {
 
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
+        TreeNode treeNode = TreeUtil.createTree();
 
 
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
 
-        Node root = node;
-        queue.add(node);
+        TreeNode root = treeNode;
+        queue.add(treeNode);
         queue.add(null);
 
-        Node prev = null;
+        TreeNode prev = null;
 
         while (!queue.isEmpty()) {
-            node = queue.poll();
-            if (node == null) {
+            treeNode = queue.poll();
+            if (treeNode == null) {
                 if (!queue.isEmpty()) {
                     queue.add(null);
                 }
             } else {
-                node.setNextRight(queue.peek());
-                System.out.println(node.data);
-                if (node.left != null) {
-                    queue.add(node.left);
+                treeNode.setNextRight(queue.peek());
+                System.out.println(treeNode.data);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
                 }
-                if (node.right != null) {
-                    queue.add(node.right);
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
                 }
 
             }

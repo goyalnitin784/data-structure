@@ -2,44 +2,44 @@ package ds.tree;
 
 public class TreeUtil {
 
-    public static Node createTree(){
+    public static TreeNode createTree(){
 
-        Node root = new Node(1);
-        root.setLeft(new Node(2));
-        root.setRight(new Node(3));
-        root.getLeft().setLeft(new Node(4));
-        root.getLeft().setRight(new Node(5));
-        root.getRight().setLeft(new Node(6));
-        root.getRight().setRight(new Node(7));
+        TreeNode root = new TreeNode(1);
+        root.setLeft(new TreeNode(2));
+        root.setRight(new TreeNode(3));
+        root.getLeft().setLeft(new TreeNode(4));
+        root.getLeft().setRight(new TreeNode(5));
+        root.getRight().setLeft(new TreeNode(6));
+        root.getRight().setRight(new TreeNode(7));
         return root;
 
     }
 
-    public static Node createTreeForK(){
+    public static TreeNode createTreeForK(){
 
-        Node root = new Node(1);
-        root.setLeft(new Node(3));
-        root.setRight(new Node(-1));
-        root.getLeft().setLeft(new Node(2));
-        root.getLeft().setRight(new Node(1));
-        root.getRight().setLeft(new Node(4));
-        root.getRight().setRight(new Node(5));
-        root.left.right.setLeft(new Node(1));
-        root.right.left.setLeft(new Node(1));
-        root.right.left.setRight(new Node(2));
-        root.right.right.setRight(new Node(6));
+        TreeNode root = new TreeNode(1);
+        root.setLeft(new TreeNode(3));
+        root.setRight(new TreeNode(-1));
+        root.getLeft().setLeft(new TreeNode(2));
+        root.getLeft().setRight(new TreeNode(1));
+        root.getRight().setLeft(new TreeNode(4));
+        root.getRight().setRight(new TreeNode(5));
+        root.left.right.setLeft(new TreeNode(1));
+        root.right.left.setLeft(new TreeNode(1));
+        root.right.left.setRight(new TreeNode(2));
+        root.right.right.setRight(new TreeNode(6));
         return root;
 
     }
-    public static Node createTree2(){
+    public static TreeNode createTree2(){
 
-        Node root = new Node(1);
-        root.setLeft(new Node(2));
-        root.setRight(new Node(3));
-        root.getLeft().setLeft(new Node(4));
-        root.getLeft().setRight(new Node(5));
-        root.getRight().setLeft(new Node(6));
-        root.getRight().setRight(new Node(9));
+        TreeNode root = new TreeNode(1);
+        root.setLeft(new TreeNode(2));
+        root.setRight(new TreeNode(3));
+        root.getLeft().setLeft(new TreeNode(4));
+        root.getLeft().setRight(new TreeNode(5));
+        root.getRight().setLeft(new TreeNode(6));
+        root.getRight().setRight(new TreeNode(9));
         return root;
 
     }

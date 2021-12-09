@@ -5,14 +5,14 @@ import java.util.TreeMap;
 
 public class BottomViewOfABinaryTree {
 
-    static Map<Integer, Node> map = new TreeMap<>();
+    static Map<Integer, TreeNode> map = new TreeMap<>();
 
     public static void main(String[] args) {
-        Node node1 = TreeUtil.createTree();
-        BottomViewOfABinaryTree.printUsingRecursion(node1, 0);
+        TreeNode treeNode1 = TreeUtil.createTree();
+        BottomViewOfABinaryTree.printUsingRecursion(treeNode1, 0);
     }
 
-    public static void printUsingRecursion(Node root, int level) {
+    public static void printUsingRecursion(TreeNode root, int level) {
         if (root == null) {
             return;
         }

@@ -1,13 +1,14 @@
 package ds.tree;
 
 public class IdenticalTree {
-    boolean check(Node node1,Node node2){
-        return (node1==null && node2==null) || (node1.data==node2.data && check(node1.left,node2.left) && check(node1.right ,node2.right));
+    boolean check(TreeNode treeNode1, TreeNode treeNode2){
+        return (treeNode1 ==null && treeNode2 ==null) || (treeNode1.data== treeNode2.data && check(
+            treeNode1.left, treeNode2.left) && check(treeNode1.right , treeNode2.right));
     }
 
     public static void main(String[] args) {
-        Node node1 = TreeUtil.createTree();
-        Node node2 = TreeUtil.createTree2();
-        System.out.println(new IdenticalTree().check(node1,node2));
+        TreeNode treeNode1 = TreeUtil.createTree();
+        TreeNode treeNode2 = TreeUtil.createTree2();
+        System.out.println(new IdenticalTree().check(treeNode1, treeNode2));
     }
 }

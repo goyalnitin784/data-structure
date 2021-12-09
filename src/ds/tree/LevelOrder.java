@@ -5,29 +5,29 @@ import java.util.Queue;
 
 public class LevelOrder {
 
-    public void traverse(Node node){
+    public void traverse(TreeNode treeNode){
 
-        if(node==null){
+        if(treeNode ==null){
             return;
         }
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(node);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(treeNode);
         while (!queue.isEmpty()){
-            node = queue.poll();
-            System.out.print(node.data);
-            if(node.left!=null){
-                queue.add(node.left);
+            treeNode = queue.poll();
+            System.out.print(treeNode.data);
+            if(treeNode.left!=null){
+                queue.add(treeNode.left);
             }
-            if(node.right!=null){
-                queue.add(node.right);
+            if(treeNode.right!=null){
+                queue.add(treeNode.right);
             }
         }
 
     }
 
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
-        new LevelOrder().traverse(node);
+        TreeNode treeNode = TreeUtil.createTree();
+        new LevelOrder().traverse(treeNode);
     }
 
 }

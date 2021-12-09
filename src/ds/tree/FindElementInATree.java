@@ -5,48 +5,48 @@ import java.util.Queue;
 
 public class FindElementInATree {
 
-    public Node find(Node node,int element){
-        if(node==null){
+    public TreeNode find(TreeNode treeNode,int element){
+        if(treeNode ==null){
             return null;
         }
-        if(node.data==element){
-            return node;
+        if(treeNode.data==element){
+            return treeNode;
         }
-        Node nodeLeft = find(node.left,element);
-        Node nodeRight  = find(node.right,element);
-        if(nodeLeft!=null){
-            return nodeLeft;
+        TreeNode treeNodeLeft = find(treeNode.left,element);
+        TreeNode treeNodeRight = find(treeNode.right,element);
+        if(treeNodeLeft !=null){
+            return treeNodeLeft;
         }
-        if(nodeRight!=null){
-            return nodeRight;
+        if(treeNodeRight !=null){
+            return treeNodeRight;
         }
         return null;
     }
-    public Node findWithoutRecursion(Node node,int element){
-        if(node==null){
+    public TreeNode findWithoutRecursion(TreeNode treeNode,int element){
+        if(treeNode ==null){
             return null;
         }
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(node);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(treeNode);
         while (!queue.isEmpty()){
-            node = queue.poll();
-            if(node.data==element){
-                return node;
+            treeNode = queue.poll();
+            if(treeNode.data==element){
+                return treeNode;
             }
-            if(node.left!=null){
-                queue.add(node.left);
+            if(treeNode.left!=null){
+                queue.add(treeNode.left);
             }
-            if(node.right!=null){
-                queue.add(node.right);
+            if(treeNode.right!=null){
+                queue.add(treeNode.right);
             }
         }
         return null;
     }
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
+        TreeNode treeNode = TreeUtil.createTree();
         int element = 6;
-        System.out.println(new FindElementInATree().find(node,element));
-        System.out.println(new FindElementInATree().findWithoutRecursion(node,element));
+        System.out.println(new FindElementInATree().find(treeNode,element));
+        System.out.println(new FindElementInATree().findWithoutRecursion(treeNode,element));
 
     }
 }

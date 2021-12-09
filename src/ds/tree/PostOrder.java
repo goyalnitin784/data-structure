@@ -2,7 +2,7 @@ package ds.tree;
 
 public class PostOrder {
 
-    public void traverseWithRecursion(Node root) {
+    public void traverseWithRecursion(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -12,12 +12,12 @@ public class PostOrder {
     }
 
     public static void main(String[] args) {
-        Node root = TreeUtil.createTree();
+        TreeNode root = TreeUtil.createTree();
         new PostOrder().traverseWithRecursion(root);
         new PostOrder().traverseWithoutRecursion(root);
     }
 
-    public void traverseWithoutRecursion(Node node) {
+    public void traverseWithoutRecursion(TreeNode treeNode) {
 
     }
 }

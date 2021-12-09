@@ -5,13 +5,13 @@ import java.util.Queue;
 
 public class MaximuxElementInTree {
 
-    public int findMax(Node node){
-        if(node==null){
+    public int findMax(TreeNode treeNode){
+        if(treeNode ==null){
             return -1;
         }
-        int tempMax = node.data;
-        int leftMax = findMax(node.left);
-        int rightMax  = findMax(node.right);
+        int tempMax = treeNode.data;
+        int leftMax = findMax(treeNode.left);
+        int rightMax  = findMax(treeNode.right);
         if(leftMax>tempMax){
             tempMax = leftMax;
         }
@@ -20,31 +20,31 @@ public class MaximuxElementInTree {
         }
         return tempMax;
     }
-    public int findMaxWithoutRecursion(Node node){
-        if(node==null){
+    public int findMaxWithoutRecursion(TreeNode treeNode){
+        if(treeNode ==null){
             return -1;
         }
         int max = -1;
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(node);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(treeNode);
         while (!queue.isEmpty()){
-            node = queue.poll();
-            if(node.data>max){
-                max = node.data;
+            treeNode = queue.poll();
+            if(treeNode.data>max){
+                max = treeNode.data;
             }
-            if(node.left!=null){
-                queue.add(node.left);
+            if(treeNode.left!=null){
+                queue.add(treeNode.left);
             }
-            if(node.right!=null){
-                queue.add(node.right);
+            if(treeNode.right!=null){
+                queue.add(treeNode.right);
             }
         }
         return max;
     }
     public static void main(String[] args) {
-        Node node = TreeUtil.createTree();
-        System.out.println(new MaximuxElementInTree().findMax(node));
-        System.out.println(new MaximuxElementInTree().findMaxWithoutRecursion(node));
+        TreeNode treeNode = TreeUtil.createTree();
+        System.out.println(new MaximuxElementInTree().findMax(treeNode));
+        System.out.println(new MaximuxElementInTree().findMaxWithoutRecursion(treeNode));
 
     }
 }

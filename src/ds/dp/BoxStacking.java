@@ -14,8 +14,6 @@ public class BoxStacking {
             arr[i * 1 + 1] = new Box((height[i] * length[i]), width[i]);
             arr[i * 2 + 1] = new Box((length[i] * width[i]), height[i]);
         }
-        Arrays.sort(arr);
-
 
         int[] heightArr = new int[arr.length];
         int[] solution = new int[arr.length];

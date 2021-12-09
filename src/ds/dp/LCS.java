@@ -7,7 +7,7 @@ public class LCS {
             return 0;
         }
         if(s1[m]==s2[n]){
-            return 1+withRecusrsion(s1,s2,m-1,n-11);
+            return 1+withRecusrsion(s1,s2,m-1,n-1);
         }
         return Math.max(withRecusrsion(s1,s2,m-1,n),withRecusrsion(s1,s2,m,n-1));
     }
